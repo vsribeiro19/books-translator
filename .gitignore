@@ -1,0 +1,29 @@
+# ---- Go ----
+/bin/
+*.exe
+*.test
+*.out
+
+# ---- Node ----
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+.npm/
+
+# ---- Environment / secrets ----
+.env
+.env.*
+!.env.example
+config/secrets.env
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Runtime data (uploads / outputs) ----
+data/
+tmp/
+*.log

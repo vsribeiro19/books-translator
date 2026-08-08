@@ -1,0 +1,7 @@
+
+extract:
+  max_upload_mb: 100
+  request_timeout: 5m
+
+rebuild:
+  request_timeout: 5m

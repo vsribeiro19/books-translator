@@ -1,0 +1,26 @@
+
+storage:
+  data_dir: ./data
+
+server:
+  max_upload_bytes: 104857600
+
+llm:
+  default_provider: deepseek
+  providers:
+    deepseek:
+      base_url: https://api.deepseek.com/v1
+      model: deepseek-chat
+      api_key_env: LLM_DEEPSEEK_API_KEY
+
+pdf_service:
+  url: http://localhost:8081
+  request_timeout: 2m
+
+translation:
+  concurrency: 3
+  max_retries: 2
+  retry_backoff: 1s
+  chunk_tokens: 4000
+  context_chunks: 2
+  request_timeout: 3m
