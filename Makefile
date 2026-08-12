@@ -1,4 +1,4 @@
-.PHONY: orchestrator pdf-service build typecheck test clean
+.PHONY: orchestrator pdf-service build typecheck test clean smoke smoke-real
 
 orchestrator:
 	cd orchestrator && go run ./cmd/server
@@ -19,4 +19,10 @@ test:
 	cd pdf-service && npm test --if-present
 
 clean:
-	rm -rf orchestrator/data pdf-service/dist
+	rm -rf orchestrator/data pdf-service/dist pdf-service/data
+
+smoke:
+	./scripts/smoke.sh
+
+smoke-real:
+	REAL=1 ./scripts/smoke.sh

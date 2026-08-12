@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/model"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/model"
 )
 
 // Line is a single translation unit inside a chunk. Blocks longer than the

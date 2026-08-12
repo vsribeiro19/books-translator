@@ -5,7 +5,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/model"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/model"
 )
 
 func newTestStore(t *testing.T) *Store {

@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/model"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/model"
 )
 
 // JobStatus is the lifecycle state of a translation job.

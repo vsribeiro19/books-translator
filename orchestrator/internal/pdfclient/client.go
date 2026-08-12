@@ -12,7 +12,7 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/model"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/model"
 )
 
 // Client talks to the pdf-service (/extract and /rebuild).
@@ -38,17 +38,46 @@ func stripSlash(u string) string {
 	return u
 }
 
+// cancelBody cancels the request context only when the response body is
+// closed. Canceling earlier (right after headers arrive) would abort body
+// reads with "context canceled" before callers consume the payload.
+type cancelBody struct {
+	io.ReadCloser
+	cancel context.CancelFunc
+}
+
+func (b *cancelBody) Close() error {
+	err := b.ReadCloser.Close()
+	b.cancel()
+	return err
+}
+
 func (c *Client) do(ctx context.Context, method, path string, body io.Reader, contentType string) (*http.Response, error) {
-	ctx, cancel := context.WithTimeout(ctx, c.timeout)
-	defer cancel()
+	var cancel context.CancelFunc
+	if c.timeout > 0 {
+		ctx, cancel = context.WithTimeout(ctx, c.timeout)
+	}
 	req, err := http.NewRequestWithContext(ctx, method, c.baseURL+path, body)
 	if err != nil {
+		if cancel != nil {
+			cancel()
+		}
 		return nil, err
 	}
 	if contentType != "" {
 		req.Header.Set("Content-Type", contentType)
 	}
-	return c.http.Do(req)
+	resp, err := c.http.Do(req)
+	if err != nil {
+		if cancel != nil {
+			cancel()
+		}
+		return nil, err
+	}
+	if cancel != nil {
+		resp.Body = &cancelBody{ReadCloser: resp.Body, cancel: cancel}
+	}
+	return resp, nil
 }
 
 // ExtractError carries the pdf-service error payload for a failed request.

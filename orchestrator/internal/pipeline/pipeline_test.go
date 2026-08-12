@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/model"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/store"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/model"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/store"
 )
 
 var errExtract = errors.New("extraction failed: boom")

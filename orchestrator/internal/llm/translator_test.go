@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/model"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/model"
 )
 
 func TestSplitTextHonorsBudget(t *testing.T) {

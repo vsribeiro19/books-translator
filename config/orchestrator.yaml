@@ -6,12 +6,12 @@ server:
   max_upload_bytes: 104857600
 
 llm:
-  default_provider: deepseek
+  default_provider: zen
   providers:
-    deepseek:
-      base_url: https://api.deepseek.com/v1
-      model: deepseek-chat
-      api_key_env: LLM_DEEPSEEK_API_KEY
+    zen:
+      base_url: https://opencode.ai/zen/v1
+      model: deepseek-v4-flash-free
+      api_key_env: OPENCODE_API_KEY
 
 pdf_service:
   url: http://localhost:8081

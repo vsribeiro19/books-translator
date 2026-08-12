@@ -5,9 +5,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/config"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/pipeline"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/store"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/config"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/pipeline"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/store"
 )
 
 type Server struct {

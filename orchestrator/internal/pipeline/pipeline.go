@@ -5,8 +5,8 @@ import (
 	"log/slog"
 	"sync"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/model"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/store"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/model"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/store"
 )
 
 // ChapterTranslator translates a whole chapter preserving block structure.

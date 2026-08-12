@@ -1,4 +1,4 @@
-module github.com/vribeiro19/books-translator/api/orchestrator
+module github.com/vsribeiro19/books-translator/api/orchestrator
 
 go 1.23
 

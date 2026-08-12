@@ -4,12 +4,12 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/api"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/config"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/llm"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/pdfclient"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/pipeline"
-	"github.com/vribeiro19/books-translator/api/orchestrator/internal/store"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/api"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/config"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/llm"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/pdfclient"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/pipeline"
+	"github.com/vsribeiro19/books-translator/api/orchestrator/internal/store"
 )
 
 func main() {
